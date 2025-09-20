@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>For You — A Letter</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:'Montserrat', sans-serif;
+    line-height:1.6;
+    text-align:left;
+    padding:40px;
+  }
+  .letter {
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    padding:24px;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    white-space:pre-wrap;
+  }
+  h1 {
+    text-align:center;
+    color:#ff3b3b;
+  }
+  .hearts {
+    position:fixed;
+    width:100%; height:100%;
+    top:0; left:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .heart {
+    position:absolute;
+    width:20px; height:20px;
+    background:red;
+    transform:rotate(-45deg);
+    animation:floatUp 8s linear infinite;
+  }
+  .heart::before, .heart::after {
+    content:"";
+    position:absolute;
+    width:20px; height:20px;
+    border-radius:50%;
+    background:red;
+  }
+  .heart::before { top:-10px; left:0; }
+  .heart::after { left:10px; top:0; }
+  @keyframes floatUp {
+    0% { transform:translateY(100vh) scale(1) rotate(-45deg); opacity:1; }
+    100% { transform:translateY(-10vh) scale(1.5) rotate(-45deg); opacity:0; }
+  }
+  iframe {
+    display:none;
+  }
+</style>
+</head>
+<body>
+  <h1>For My Baby ❤️</h1>
+  <div class="letter">
+hi baby, i hope maganda tulog mo ngayon and i hope hindi ka mag cry while reading this:) kasi the only thing i want is for you to smile habang binabasa mo ‘to. i’m really sorry if i’m like this, ewan ko din bakit nangyayari sakin ‘to i just want to be loved ng  sobra— and i didn’t realize na you needed that too. sorry if i’ve been such a bad gf lately, but i promise i’ll do everything just to make you feel loved again, like before.
+
+pero baby, magiging okay ba sayo if i leave you? i guess not pero at least you’ll be happy with someone else and dun mo mararamdaman yung love na feeling mo you deserve. pero sana maalala mo na i’m still trying to give you everything kahit ang hirap ko intindihin.
+
+and yes baby, totoo na i still remember the past whenever i talk to you sorry if it’s hard for me to forget everything kahit i try, hindi ko pa rin makalimutan. and please don’t ever think na i’ll just forget once you leave me— no po baby, that’s not the right way and that’s not the right decision for us.
+
+i love you baby sobra, kahit minsan ang sakit na parang ako na lang yung mali pero at the end of the day ikaw pa rin yung pinipili ko. wag mo isipin na i don’t love you anymore, i fckng love you so much baby, you really don’t know that i promise you, mafe-feel mo na yung love na deserve mo. kahit ilang beses pa po tayo mag hiwalay remember that po na my heart will always find its way back to you. you’re my safe place baby, my home and everything, i’ll keep choosing no matter what I LOVEEE YOUUUUUUU SO MUCHHH BABI.
+  </div>
+
+  <div class="hearts"></div>
+
+  <!-- YouTube autoplay embed -->
+  <iframe 
+    src="https://www.youtube.com/embed/tGv7CUutzqU?autoplay=1&loop=1&playlist=tGv7CUutzqU&controls=0&modestbranding=1&rel=0" 
+    allow="autoplay" 
+    width="0" 
+    height="0">
+  </iframe>
+
+<script>
+  // floating hearts
+  const hearts=document.querySelector('.hearts');
+  function createHeart(){
+    const h=document.createElement('div');
+    h.className='heart';
+    h.style.left=Math.random()*100+'vw';
+    h.style.animationDuration=5+Math.random()*5+'s';
+    hearts.appendChild(h);
+    setTimeout(()=>h.remove(),10000);
+  }
+  setInterval(createHeart,400);
+</script>
+</body>
+</html>
